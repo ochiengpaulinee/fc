@@ -1,3 +1,5 @@
+import java.nio.DoubleBuffer
+
 fun main(){
 //ageClassified(1)
 //    ageClassified(3)
@@ -12,6 +14,9 @@ fun main(){
 //    countryNationality("Portugal")
 //    countryNationality("Kenya")
 //    countryNationality("America")
+
+
+    println(mixed(arrayOf("home",5,6.5,7.5,"hey",7.0)))
     var numbers = arrayOf(37,52,66,107,38,91)
     println(numbers)
 
@@ -114,8 +119,14 @@ fun numbers(nums:Array<Int>){
 
 //write a function that takes in an array of mixed types
 //and returns the sum of all
-//the dcimal elements
+//the decimal elements
 
-//fun mixed(mix:Arrray<Any>){
-//
-//}
+fun mixed( mix:Array<Any>):Double{
+    var decimals = 0.0
+for(mixx in mix){
+    if(mixx is Double){
+        decimals +=mixx
+    }
+}
+return decimals
+}
